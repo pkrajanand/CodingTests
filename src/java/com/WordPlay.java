@@ -1,3 +1,7 @@
+package com;
+
+import org.springframework.util.Assert;
+
 public class WordPlay {
     public String solution(String S, String T) {
         if (S.equalsIgnoreCase(T)) {
@@ -30,10 +34,21 @@ public class WordPlay {
 
     public static void main(String[] args) {
         WordPlay wordPlay = new WordPlay();
-
-        System.out.println(wordPlay.solution("nice", "niece"));
-        System.out.println(wordPlay.solution("niece", "nice"));
-        System.out.println(wordPlay.solution("nice", "nice"));
-        System.out.println(wordPlay.solution("o", "odd"));
+        
+        String solution1 = wordPlay.solution("nice", "niece");
+		System.out.println(solution1);
+        Assert.isTrue(solution1.equals("INSERT e"), "solution is "+solution1+", instead of INSERT e");
+        
+        String solution2 = wordPlay.solution("niece", "nice");
+		System.out.println(solution2);
+        Assert.isTrue(solution2.equals("DELETE e"), "solution is "+solution2+", instead of DELETE e");
+        
+        String solution3 = wordPlay.solution("nice", "nice");
+		System.out.println(solution3);
+        Assert.isTrue(solution3.equals("NOTHING"), "solution is "+solution3+", instead of NOTHING");
+        
+        String solution4 = wordPlay.solution("o", "odd");
+		System.out.println(solution4);
+        Assert.isTrue(solution4.equals("IMPOSSIBLE"), "solution is "+solution4+", instead of IMPOSSIBLE");
     }
 }
