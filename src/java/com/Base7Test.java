@@ -6,14 +6,17 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Base7Test {
-
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) throws IOException, IllegalAccessException{
         Scanner in = new Scanner(System.in);
         final String fileName = System.getenv("OUTPUT_PATH");
+        if (fileName == null) {
+        	throw new IllegalAccessException("filename is not set through OUTPUT_PATH env variable");
+        }
         BufferedWriter bw = new BufferedWriter(new FileWriter(fileName));
         String res;
         int _n;
+        System.out.println ("Please enter a decimal number");
         _n = Integer.parseInt(in.nextLine());
         
         res = base7 (_n);

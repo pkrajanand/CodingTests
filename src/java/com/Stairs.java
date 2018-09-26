@@ -1,16 +1,13 @@
 package com;
 
-import java.io.*;
-import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
+import java.util.Scanner;
 
-public class  SomeClass {
+public class  Stairs {
 
 	public static void main(String[] args){
         Scanner in = new Scanner(System.in);
         int _n;
+        System.out.println ("Please enter the number of Stairs");
         _n = Integer.parseInt(in.nextLine().trim());
         
         StairCase(_n);
